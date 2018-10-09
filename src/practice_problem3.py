@@ -430,7 +430,7 @@ def run_test_practice_problem3d():
     st.SimpleTestCase.run_tests('practice_problem3d', tests)
 
 
-def practice_problem3d(sequence):
+def practice_problem3d(sequence, boolean=True):
     """
     What comes in: A sequence of integers.
     What goes out: Returns the first (leftmost) place (index)
@@ -466,27 +466,31 @@ def practice_problem3d(sequence):
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
 
-    for i in range(len(sequence)):
-        if sequence[i] == 0:
-            return i
-    return -1
+    if boolean == True:
+        for i in range(len(sequence)):
+            if sequence[i] == 0:
+                return i
+        return -1
 
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+    # DONE: 6. Just ABOVE this DONE, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
-    #       -- Your FIRST solution (ABOVE this TODO)
+    #       -- Your FIRST solution (ABOVE this DONE)
     #            should be a solution that IGNORES
     #              practice_problem3c (the previous problem).
     #
-    #       -- Your SECOND solution (BELOW this TODO)
+    #       -- Your SECOND solution (BELOW this DONE)
     #            should be a solution that USES (calls)
     #              practice_problem3c.
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
+    else:
+        new = practice_problem3c(sequence)
+        return new[0]
 
 
 def run_test_practice_problem3e():
